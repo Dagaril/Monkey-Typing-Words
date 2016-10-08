@@ -1,23 +1,27 @@
 import random
+A=list(input('Enter your word: '))
+l=len(A)
+B=[]
 y=0
+for letter in A:
+    num = ord(letter)
+    if num<97:
+            num=num+32
+    B.append(num)
+    print(B)
+#^Creates a list 'B' which consists of the numerical code for the entered letters
 while y<5:
-        B=[]
-        C=[6,15,15,4] 
-        #'6,15,15,4'=food
         n=0
         while 1:
-                x=random.randint(1,26)
-                B.append(x)
-                x=random.randint(1,26)
-                B.append(x)
-                x=random.randint(1,26)
-                B.append(x)
-                x=random.randint(1,26)
-                B.append(x)
-                n=n+1
-                if B==C:
+                for m in range(l):
+                        x=random.randint(97,122)
+                        A.append(x)
+                #^Generates random integers as many times as there are letters in the entered word
+                n+=1
+                if A==B:
+                        A=[]
                         break
                 else:
-                        B=[]
+                        A=[]
         print(n)
-        y=y+1
+        y+=1
