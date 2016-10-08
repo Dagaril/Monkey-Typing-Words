@@ -10,7 +10,7 @@ for letter in A:
     B.append(num)
     print(B)
 #^Creates a list 'B' which consists of the numerical code for the entered letters
-while y<5:
+while y<15:
         n=0
         while 1:
                 for m in range(l):
