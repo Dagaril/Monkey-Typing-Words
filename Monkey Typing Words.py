@@ -1,35 +1,35 @@
 import random
 import math
-A=list(input('Enter your word: '))
-l=len(A)
-print (l)
+wrd=list(input('Enter your word: '))
+l=len(wrd)
+A=[]
 B=[]
 C=[]
 y=0
-atmpt=5
-for letter in A:
+atmpt=100
+def rndmltr():
+    x=random.randint(97,122)
+    A.append(x)
+    return A
+for letter in wrd:
+    letter= str.lower(letter)
     num = ord(letter)
-    if num<97:
-            num=num+32
     B.append(num)
-    print(B)
-A=[]
 #^Creates a list 'B' which consists of the numerical code for the entered letters
 while y<atmpt:
-        n=0
-        while 1:
-                for m in range(l):
-                        x=random.randint(97,122)
-                        A.append(x)
-                #^Generates random integers as many times as there are letters in the entered word
-                n+=1
-                if A==B:
-                        A=[]
-                        break
-                else:
-                        A=[]
-        C.append(n)
-        y+=1
+    n=0
+    while 1:
+        for m in range(l):
+            rndmltr()
+        #^Generates random integers as many times as there are letters in the entered word
+        n+=1
+        if A==B:
+            A=[]
+            break
+        else:
+            A=[]
+    C.append(n)
+    y+=1
 #Begin Confidence interval calculations
 #mn=mean ; sd=standard deviation ; cl=confidence level ; cc=confidence coefficient ; me=margin of error ; ci=confidence interval
 cl=.95
