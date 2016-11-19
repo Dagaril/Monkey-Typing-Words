@@ -1,10 +1,11 @@
 import random
 import math
-wrd=list(input('Enter your word: '))
+wrd=list('hey')
+#wrd=list(input('Enter your word: '))
 A=[];B=[];C=[]
 y=0
-atmpt=10
-I=[0,0,0,0,0,0]
+atmpt=500000
+I=[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
 cntr=1
 def rndmltr():
     x=random.randint(97,122)
@@ -22,13 +23,13 @@ for y in range(atmpt):
         #^Generates random integers as many times as there are letters in the entered word
         n+=1
         if A==B:
-            if n<10000:
+            if n<2000:
                 I[0]+=1
             else:
-                if n>50000:
-                    I[5]+=1
+                if n>=29000:
+                    I[28]+=1
                 else:
-                    for h in range(20000,60000,10000):
+                    for h in range(3000,30000,1000):
                         if n<=h:
                             I[cntr]+=1
                             cntr=1
@@ -39,5 +40,5 @@ for y in range(atmpt):
         else:
             A=[]
     C.append(n)
-    print(n)
+    print(y)
 print(I)
